@@ -1,0 +1,109 @@
+<div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+    <app-header-nav></app-header-nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_settings-panel.html -->
+  
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+      <app-navbar></app-navbar>
+      <!-- partial -->
+      <div class="container">
+        <header>Details Session</header>
+
+        <form   >
+            <div class="form first">
+                <div class="details personal">
+                    
+
+                    <div class="fields">
+                        <div class="input-field">
+                 
+                           Titre: {{session.titre}}
+                        </div>
+
+                        <div class="input-field">
+                         Date debut : {{session.date_debut}}
+                         </div>
+
+                        <div class="input-field">
+                            Date Fin : {{session.date_debut}}
+                         </div>
+
+                    
+
+                      
+
+                        <div class="input-field">
+                            Théme : {{session.theme.titre}}
+                       
+                        </div>
+
+                        <div class="input-field">
+                     
+                            Formateur : {{session.formateur.firstName}} {{session.formateur.lastName}}
+                        </div>
+                        <div class="input-field">
+                     
+                            Nombre de particpant : {{session.listeParticpants.length}}  
+                        </div>
+                        <div class="input-field">
+                     
+                  
+                        </div>
+ 
+ 
+                    </div>
+                  
+                
+                </div>
+                <header>Questionnaire</header>
+                <div class="container" *ngFor="let item of session.sondage;index as i; "    >
+                    <form>
+                      <div class="sondage">
+                  <div class="row" >
+                    
+                      <h6 style="font-size: 18px !important;"    >S{{i+1}}.{{item.titre}}</h6>
+                    </div>
+                      <ul  >
+                    
+                        <li  class="col-md-6"><label class="ckcontainer">{{item.reponse1}}
+                          <input type="checkbox" value="{{item._id}}" [checked]="item.select"
+                           >
+                            <span class="checkmark"></span>
+                          </label>
+                        </li>
+                        
+                        <li  class="col-md-6"><label class="ckcontainer">{{item.reponse2}}
+                            <input type="checkbox" value="{{item._id}}" [checked]="item.select"
+                             >
+                              <span class="checkmark"></span>
+                            </label>
+                          </li>
+                       
+                         
+                        
+                    
+                      </ul>
+                
+                      <div class="row">
+                  
+                      <div class="col-4"><button     type="submit"  >Votre avis</button></div>
+                      <div class="col-4"></div>
+                      </div>
+                    </div>
+                      </form>
+                
+                    </div>
+
+            
+            </div>
+
+             
+        </form>
+    </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>

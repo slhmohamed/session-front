@@ -1,0 +1,47 @@
+<div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+    <app-header-nav></app-header-nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_settings-panel.html -->
+  
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+      <app-navbar></app-navbar>
+      <!-- partial -->
+      <div class="container" style="margin-top: 75px">
+        <header>Liste Session</header>
+
+        <table style="width: 100%;">
+            <tbody>
+              <tr>
+                <th > Titre</th>
+                <th  >Date debut </th>
+                <th  > Date fin</th>
+                <th  > Formateur</th>
+                <th  > Theme</th>
+                <th *ngIf="role==='Particpant'" > Participation</th>
+              </tr>
+              <tr *ngFor="let item of session | paginate: { itemsPerPage: 5, currentPage: p } " >
+                <td>{{item?.titre  }}</td>
+                <td>{{item.date_debut}} </td> 
+                  <td> {{item.date_fin}}</td>
+                  <td> {{item?.formateur?.firstName}}  {{item?.formateur?.lastName}}</td>
+                  <td> {{item?.theme?.titre}}</td>
+                  <td *ngIf="role==='Particpant'"><i (click)="particpe(item)" class="uil-book-open"></i><i routerLink="/dashboard/details-session/{{item._id}}" class="uil-eye"></i></td>
+              </tr>
+            </tbody>
+          </table>
+                <div class="row pag">
+
+                  <pagination-controls previousLabel=" " nextLabel="" class="pagination-block" (pageChange)="p = $event">
+                  </pagination-controls>
+                </div>         
+     
+    </div>
+      <!-- main-panel ends -->
+    </div>
+
+    
+    <!-- page-body-wrapper ends -->
+  </div>

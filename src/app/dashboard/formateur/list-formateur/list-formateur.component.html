@@ -1,0 +1,71 @@
+
+  <div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+<app-header-nav></app-header-nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_settings-panel.html -->
+      
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+ <app-navbar></app-navbar>
+      <!-- partial -->
+      <div class="container">
+           
+        <!-- row -->
+        <div class="row">
+            <div class="col-lg-12">
+                 
+                <div class="section-title title-style-center_text">
+                    <div class="title-header">
+                        <div class="table-wrapper"  >
+                          <h2 style="text-align: center">Liste des formateurs <small> </small></h2>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>CIN</th>
+                                        <th>Nom</th>
+                                        <th>Prenom</th>
+                                        <th>Email</th>
+                                        <th>Tel</th>
+                                        
+                                        <th *ngIf="role!=='Particpant'">Action</th>
+                                    </tr>
+                                    <tr *ngFor="let item of formateur" >
+                                        <td>{{item.cin}}</td>
+                                        <td>{{item.firstName}}</td>
+                                        <td>{{item.lastName}}</td>
+                                        <td>{{item.email}}</td>
+
+                                        <td>{{item.tel}}</td>
+                                         
+                                      
+                                        <td  *ngIf="role!=='Particpant'"  >  <i routerLink="/dashboard/edit-formateur/{{item._id}}" class="uil uil-edit icon"></i>   <i (click)="delete(item._id)" class="uil uil-trash icon"></i></td>
+                                    </tr>
+
+                                    <!-- end of the loop -->
+
+
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
+
+
+
+                        <!---->
+                    </div>
+
+                </div><!-- section-title end -->
+            </div>
+        </div>
+        <!-- row end -->
+
+    </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  

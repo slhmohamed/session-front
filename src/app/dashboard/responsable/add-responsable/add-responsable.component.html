@@ -1,0 +1,69 @@
+<div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+    <app-header-nav></app-header-nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_settings-panel.html -->
+  
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+      <app-navbar></app-navbar>
+      <!-- partial -->
+      <div class="container">
+        <header>Nouveau Responsable</header>
+
+        <form [formGroup]="responsableForm" (ngSubmit)="onSubmit()">
+            <div class="form first">
+                <div class="details personal">
+                    
+
+                    <div class="fields">
+                        <div class="input-field">
+                 
+                            <input type="text" placeholder="Nom" formControlName="firstName" required>
+                        </div>
+
+                        <div class="input-field">
+                           
+                            <input type="text" placeholder="Prenom"  formControlName="lastName"required>
+                        </div>
+
+                        <div class="input-field">
+                            
+                            <input type="text" placeholder="CIN" formControlName="cin" required>
+                        </div>
+
+                        <div class="input-field">
+                             
+                            <input type="number" placeholder="Télephone" formControlName="tel" required>
+                        </div>
+
+                        <div class="input-field">
+                                
+                            <input type="text" placeholder="Email" formControlName="email" required>
+                          
+                        </div>
+
+                        <div class="input-field">
+                            
+                            <input type="text" placeholder="Mot de passe" formControlName="password" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons">
+                   
+                    
+                    <button class="sumbit">
+                        <span class="btnText">Ajouter Responsable</span>
+                      
+                    </button>
+                </div>
+            </div>
+
+             
+        </form>
+    </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>

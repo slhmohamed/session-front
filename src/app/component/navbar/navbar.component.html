@@ -1,0 +1,122 @@
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+  <ul class="nav">
+
+    <li class="nav-item" >
+      <a class="nav-link" data-toggle="collapse" href="#formateur" aria-expanded="false" aria-controls="charts">
+        <i class="uil-chat-bubble-user"></i>
+        <span class="menu-title">Formateur</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="formateur">
+        <ul class="nav flex-column sub-menu">
+          <li  *ngIf="role!=='Particpant'" class="nav-item"> <a class="nav-link" routerLink="/dashboard/ajout-formateur">Nouveau Formateur</a></li>
+          <li class="nav-item"> <a class="nav-link" routerLink="/dashboard/liste-formateur">Liste Formateur</a></li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="nav-item" *ngIf="role==='Admin'">
+      <a class="nav-link" data-toggle="collapse" href="#Responsable" aria-expanded="false" aria-controls="charts">
+        <i class="uil-user-check"></i>
+        <span class="menu-title">Responsable</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="Responsable">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" routerLink="/dashboard/ajout-responsable">Nouveau Responsable</a></li>
+          <li class="nav-item"> <a class="nav-link" routerLink="/dashboard/liste-responsable">Liste Responsable</a></li>
+        </ul>
+      </div>
+    </li>
+
+
+
+    <li class="nav-item" *ngIf="role!=='Particpant'">
+      <a class="nav-link" data-toggle="collapse" href="#Société" aria-expanded="false" aria-controls="charts">
+        <i class="uil-archway"></i>
+        <span class="menu-title">Société</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="Société">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" routerLink="/dashboard/ajout-societe">Nouveau Société</a></li>
+          <li class="nav-item"> <a class="nav-link" routerLink="/dashboard/liste-societie">Liste Société</a></li>
+        </ul>
+      </div>
+    </li>
+
+
+    <li class="nav-item" *ngIf="role!=='Particpant'">
+      <a class="nav-link" data-toggle="collapse" href="#Participant" aria-expanded="false" aria-controls="charts">
+        <i class="uil-users-alt"></i>
+        <span class="menu-title">Participant</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="Participant">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" routerLink="/dashboard/ajout-participant">Nouveau Participant</a></li>
+          <li class="nav-item"> <a class="nav-link" routerLink="/dashboard/liste-participant">Liste Participant</a></li>
+        </ul>
+      </div>
+    </li>
+
+
+    <li class="nav-item"  >
+      <a class="nav-link" data-toggle="collapse" href="#Theme" aria-expanded="false" aria-controls="charts">
+        <i class="uil-bars"></i>
+        <span class="menu-title">Theme</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="Theme">
+        <ul class="nav flex-column sub-menu">
+          <li  *ngIf="role!=='Particpant'" class="nav-item"> <a class="nav-link" routerLink="/dashboard/ajout-theme">Nouveau Theme</a></li>
+          <li class="nav-item"> <a class="nav-link" routerLink="/dashboard/liste-theme">Liste Theme</a></li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#Cataloge" aria-expanded="false" aria-controls="charts">
+        <i class=" uil-bookmark-full"></i>
+        <span class="menu-title">Cataloge</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="Cataloge">
+        <ul class="nav flex-column sub-menu">
+          <li  *ngIf="role!=='Particpant'" class="nav-item"> <a class="nav-link" routerLink="/dashboard/ajout-cataloge">Nouveau Cataloge</a></li>
+          <li class="nav-item"> <a class="nav-link" routerLink="/dashboard/liste-cataloge">Liste Cataloge</a></li>
+        </ul>
+      </div>
+    </li>
+
+
+
+ 
+
+
+
+    <li  class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+        <i class="icon-bar-graph menu-icon"></i>
+        <span class="menu-title">Session</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="charts">
+        <ul class="nav flex-column sub-menu">
+          <li *ngIf="role!=='Particpant'"  class="nav-item"> <a class="nav-link" routerLink="/dashboard/ajout-session">Nouveau Session</a></li>
+          <li class="nav-item"> <a class="nav-link" routerLink="/dashboard/liste-session">Liste Session</a></li>
+        </ul>
+      </div>
+    </li>
+
+    
+ 
+     
+    <li class="nav-item"  (click)="logout()"> 
+      <a class="nav-link"  >
+        <i class="uil-corner-down-right-alt"></i>
+        <span class="menu-title">Déconnexion</span>
+      </a>
+    </li>
+  </ul>
+</nav>

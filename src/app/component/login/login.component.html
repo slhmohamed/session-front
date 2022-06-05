@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="forms">
+        <div class="form login">
+            <span class="title">Se connecter</span>
+
+            <form   [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="input-field">
+                    <input type="text" placeholder="Entrer email" formControlName="email" required>
+                    <i class="uil uil-envelope icon"></i>
+                </div>
+                <div class="input-field">
+                    <input type="password" class="password" placeholder="Entrer mot de passe" formControlName="password" required>
+                    <i class="uil uil-lock icon"></i>
+                
+                </div>
+
+           
+
+                <div class="input-field button">
+                    <button type="submit" >Se connecter</button>
+                </div>
+            </form>
+
+            
+        </div>
+
+        
+    </div>
+</div>

@@ -1,0 +1,89 @@
+<div class="container-scroller">
+  <!-- partial:../../partials/_navbar.html -->
+  <app-header-nav></app-header-nav>
+  <!-- partial -->
+  <div class="container-fluid page-body-wrapper">
+    <!-- partial:../../partials/_settings-panel.html -->
+
+    <!-- partial -->
+    <!-- partial:../../partials/_sidebar.html -->
+    <app-navbar></app-navbar>
+    <!-- partial -->
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="row">
+          <div class="main-panel">
+            <div class="content-wrapper">
+              <div class="row">
+                <div class="col-md-12 grid-margin stretch-card">
+                  <div class="container">
+                    <div class="title">Nouveau Particpant</div>
+                    <div class="content">
+                      <form [formGroup]="participantForm" (ngSubmit)="onSubmit()">
+                        <div class="user-details">
+                          <div class="input-box">
+                            <span class="details">Nom</span>
+                            <input type="text" placeholder="Nom"  formControlName="firstName"required>
+                          </div>
+                          <div class="input-box">
+                            <span class="details">Prenom</span>
+                            <input type="text" placeholder="Prenom" formControlName="lastName" required>
+                          </div>
+                          <div class="input-box">
+                            <span class="details">Email</span>
+                            <input type="text" placeholder="Email"  formControlName="email"required>
+                          </div>
+                          <div class="input-box">
+                            <span class="details">Télephone</span>
+                            <input type="text" placeholder="Télephone" formControlName="tel" required>
+                          </div>
+                          <div class="input-box">
+                            <span class="details">Mot de passe</span>
+                            <input type="text" placeholder="Mot de passe" formControlName="password" required>
+                          </div>
+                          <div class="input-box">
+                            <span class="details">Raison social</span>
+                            <input type="text" placeholder="Raison social" formControlName="raison_social" required>
+                          </div>
+                          <div class="input-box">
+                            <span class="details">Adresse</span>
+                            <input type="text" placeholder="Adresse" formControlName="adresse" required>
+                          </div>
+                          <div class="input-box">
+                            <span class="details">Socitie</span>
+
+                            <select name="pets" id="pet-select" formControlName="socite">
+                              <ng-container *ngFor="let item of socitie">
+
+                                <option [value]="item._id">{{item.nom}}</option>
+                              </ng-container>
+                            </select>
+
+                          </div>
+                        </div>
+
+                        <div class="button">
+                          <button type="submit">Ajouter Particpant</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      <!-- content-wrapper ends -->
+      <!-- partial:../../partials/_footer.html -->
+      <footer class="footer">
+     
+      </footer>
+      <!-- partial -->
+    </div>
+    <!-- main-panel ends -->
+  </div>
+  <!-- page-body-wrapper ends -->
+</div>

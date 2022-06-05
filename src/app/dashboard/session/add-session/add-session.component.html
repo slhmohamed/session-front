@@ -1,0 +1,126 @@
+<div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+    <app-header-nav></app-header-nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_settings-panel.html -->
+  
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+      <app-navbar></app-navbar>
+      <!-- partial -->
+      <div class="container">
+        <header>Ajouter Session</header>
+
+        <form  [formGroup]="sessionForm" (ngSubmit)="onSubmit()">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Nouveau Session</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                 
+                            <input type="text" placeholder="Titre"  formControlName="titre" required>
+                        </div>
+
+                        <div class="input-field">
+                         
+                            <input type="date" placeholder="Date debut"  formControlName="date_debut" required>
+                        </div>
+
+                        <div class="input-field">
+                         
+                            <input type="date" placeholder="Date fin"   formControlName="date_fin"required>
+                        </div>
+
+                    
+
+                      
+
+                        <div class="input-field">
+                     
+                            <select   formControlName="formateur">
+                                <ng-container *ngFor="let item of formateur">
+                                
+                                <option [value]="item._id">{{item.firstName}} {{item.lastName}}</option>
+                            </ng-container>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                     
+                            <select   formControlName="theme">
+                                <ng-container *ngFor="let item of theme">
+                                <option [value]="item._id">{{item.titre}}</option>
+                            </ng-container>
+                            </select>
+                        </div>
+ 
+ 
+                    </div>
+                    <hr>
+                    <span class="title">Ajouter questionnaire</span>
+                  
+                    <div   formArrayName="sondage"  >
+                        <div *ngFor="let item of getSondageControls() ;let f=index;trackBy: p_trackByFn;">
+                          
+                          <div [formGroupName]="f">
+               
+                            <div class="input-field">
+                         
+                                <input type="text" placeholder="Tittre"   formControlName="titre" >
+                            </div>
+                            <div class="fields">
+                            <div class="input-field">
+                         
+                                <input type="text" placeholder="Reponse 1"   formControlName="reponse1" >
+                            </div>
+                            <div class="input-field">
+                         
+                                <input type="text" placeholder="Reponse 2"   formControlName="reponse2" >
+                            </div>
+                        </div>
+                   
+                            <div class="button"  (click)="deleteSondageItem(f)" style="      width: 61px !important;
+                            /* margin-left: 670px !important; */
+                            /* margin-top: 4px !important; */
+                            background: #e63535;
+                            margin-top: 9px;    height: 46px;
+"  ><i class="fa fa-times-circle" aria-hidden="true"></i></div>
+        
+        
+        
+        </div>    
+                    </div>
+                            <div 
+                             (click)="addSondageItem()" style="
+                             width: 61px !important;
+                             margin-left: 110px !important;
+                             /* margin-top: 5px !important; */
+                             background: #35e653;
+                             float: right;
+                             margin-top: -42px;
+                             height: 46px;
+                         "   ><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
+                        
+                    </div>
+                
+                </div>
+
+                <div class="buttons">
+                       
+                        
+                    <button type="submit" class="sumbit">
+                        <span class="btnText">Ajouter</span>
+                         
+                    </button>
+                </div> 
+            </div>
+
+             
+        </form>
+    </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>

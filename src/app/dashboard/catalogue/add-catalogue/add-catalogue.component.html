@@ -1,0 +1,71 @@
+ 
+
+  <div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+<app-header-nav></app-header-nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_settings-panel.html -->
+      
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+ <app-navbar></app-navbar>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="main-panel">        
+              <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-md-12 grid-margin stretch-card">
+                        <div class="wrapper">
+                            <h2>Nouveau Catalogue</h2>
+                            <form [formGroup]="catalogueForm" (ngSubmit)="onSubmit()">
+                              <div class="input-box">
+                                <input type="text" placeholder="Titre" formControlName="slug" required>
+                              </div>
+                              <div class="input-box">
+                                <input type="text" placeholder="Description" formControlName="description" required>
+                              </div>
+                              <div class="input-box">
+                                <ng-select
+                                [items]="theme" 
+                               bindLabel="titre" 
+                               placeholder="Selectionner Théme"
+                               [multiple]="true"
+                               (change)="add($event)"
+                               [closeOnSelect]="false"
+                               [searchable]="false"
+                               
+                             >
+                    </ng-select>
+                              </div>
+                             
+                            
+                               
+                              <div class="input-box button">
+                                <button type="Submit"  >Ajouter Cataloge</button>
+                              </div>
+                             
+                            </form>
+                          </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            
+           
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+         
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  
